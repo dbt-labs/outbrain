@@ -1,0 +1,16 @@
+name: 'outbrain'
+version: '1.0'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+target-path: "target"
+clean-targets: ["target", "dbt_modules"]
+test-paths: ["test"]
+data-paths: ["data"]
+
+models:
+    outbrain:
+        materialized: view
+        vars:
+            campaigns_table: #schema.table
+            performance_table: #schema.table

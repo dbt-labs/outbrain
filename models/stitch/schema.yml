@@ -1,0 +1,22 @@
+outbrain_campaigns:
+    constraints:
+        not_null:
+            - id
+            - spend
+            - name
+            - active
+            - currency
+        unique:
+            - id
+
+outbrain_campaign_performance:
+    constraints:
+        not_null:
+            - id
+            - date_day
+            - campaign_id
+            - spend
+        unique:
+            - id
+        relationships:
+            - {from: campaign_id, to: outbrain_campaigns, field: id}
