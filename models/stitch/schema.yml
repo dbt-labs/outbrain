@@ -19,4 +19,4 @@ outbrain_campaign_performance:
         unique:
             - id
         relationships:
-            - {from: campaign_id, to: outbrain_campaigns, field: id}
+            - {from: campaign_id, to: ref('outbrain_campaigns'), field: id}
