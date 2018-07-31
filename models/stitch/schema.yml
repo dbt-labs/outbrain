@@ -18,5 +18,3 @@ outbrain_campaign_performance:
             - spend
         unique:
             - id
-        relationships:
-            - {from: campaign_id, to: ref('outbrain_campaigns'), field: id}
