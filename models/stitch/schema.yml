@@ -1,20 +1,44 @@
-outbrain_campaigns:
-    constraints:
-        not_null:
-            - id
-            - spend
-            - name
-            - active
-            - currency
-        unique:
-            - id
+version: 2
 
-outbrain_campaign_performance:
-    constraints:
-        not_null:
-            - id
-            - date_day
-            - campaign_id
-            - spend
-        unique:
-            - id
+models:
+  - name: outbrain_campaigns
+    columns:
+    - name: active
+      tests:
+      - not_null
+
+    - name: currency
+      tests:
+      - not_null
+
+    - name: id
+      tests:
+      - not_null
+      - unique
+
+    - name: name
+      tests:
+      - not_null
+
+    - name: spend
+      tests:
+      - not_null
+
+  - name: outbrain_campaign_performance
+    columns:
+    - name: campaign_id
+      tests:
+      - not_null
+
+    - name: date_day
+      tests:
+      - not_null
+
+    - name: id
+      tests:
+      - not_null
+      - unique
+
+    - name: spend
+      tests:
+      - not_null
